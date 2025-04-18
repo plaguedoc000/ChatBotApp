@@ -1,0 +1,3 @@
+C:/Users/Никита/Desktop/lab2/CMakeFiles/main.dir
+C:/Users/Никита/Desktop/lab2/CMakeFiles/edit_cache.dir
+C:/Users/Никита/Desktop/lab2/CMakeFiles/rebuild_cache.dir
