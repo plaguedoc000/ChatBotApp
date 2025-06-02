@@ -1,11 +1,14 @@
 #include "ChatBot.h"
+#include <iostream>
+#include <exception>
 
 int main() {
-
-    setlocale(LC_ALL, "RU-ru.UTF8");
-    
-    ChatBot chatbot;
-    chatbot.run();
-    
+    try {
+        ChatBot bot;
+        bot.run();
+    } catch (const std::exception& ex) {
+        std::cerr << "Критическая ошибка: " << ex.what() << "\n";
+        return 1;
+    }
     return 0;
 }

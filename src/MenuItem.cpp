@@ -1,21 +1,13 @@
 #include "MenuItem.h"
-#include <iostream>
-#include <limits>
 
-MenuItem::MenuItem(const std::string& title, int id)
-    : title(title), id(id) {}
+MenuItem::MenuItem(const std::string& label_, std::function<void()> action_)
+    : label(label_), action(std::move(action_))
+{}
 
-std::string MenuItem::getTitle() const {
-    return title;
-}
-
-int MenuItem::getId() const {
-    return id;
+std::string MenuItem::getLabel() const {
+    return label;
 }
 
 void MenuItem::execute() {
-    std::cout << "Выбранный пункт меню: " << title << std::endl;
-    std::cout << "Этот функционал еще не реализован." << std::endl;
-    std::cout << "Нажмите Enter для продолжения...";
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    action();
 }

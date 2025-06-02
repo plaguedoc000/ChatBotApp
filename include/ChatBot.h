@@ -2,13 +2,24 @@
 #define CHATBOT_CHATBOT_H
 
 #include "AuthSystem.h"
+#include "MyVector.h"
+#include <string>
 
-// Главный класс чатбота
 class ChatBot {
 private:
-    AuthSystem authSystem;
+    AuthSystem auth;
+    User* currentUser = nullptr;
+    bool switchUserRequested = false;
+    MyVector<std::string> history;
+
+    void startChat();
+    void showHistory();
+    void editProfile();
+    void userManagement();
+    void showStatistics();
 
 public:
+    ChatBot() = default;
     void run();
 };
 

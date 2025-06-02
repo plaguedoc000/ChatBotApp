@@ -1,12 +1,10 @@
 #ifndef CHATBOT_MENU_H
 #define CHATBOT_MENU_H
 
-#include <string>
-#include "MyVector.h"
-#include <memory>
 #include "MenuItem.h"
+#include "MyVector.h"
+#include <string>
 
-// Определение класса Menu (базовый класс меню)
 class Menu {
 protected:
     std::string title;
